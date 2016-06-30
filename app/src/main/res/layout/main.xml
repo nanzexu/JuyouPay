@@ -38,15 +38,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="开始登陆"
+        android:background="@drawable/btn_success"
         android:id="@+id/loginBtn"
         android:layout_marginTop="51dp"
         android:layout_below="@+id/pwdEditer"
-        android:layout_toStartOf="@+id/getpwdBtn" />
+        android:layout_toStartOf="@+id/getpwdBtn"
+        android:layout_marginRight="10dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="忘记密码"
+        android:background="@drawable/btn_warning"
         android:id="@+id/getpwdBtn"
         android:layout_alignTop="@+id/loginBtn"
         android:layout_alignParentEnd="true" />
