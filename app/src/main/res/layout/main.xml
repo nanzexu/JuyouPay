@@ -3,14 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.juyou.juyoupay.Main">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/idEditer"
+        android:background="@drawable/bg_edittext"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:layout_marginTop="150dp"
+        android:singleLine="true"
+        android:hint="请输入账号..." />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pwdEditer"
+        android:background="@drawable/bg_edittext"
+        android:padding="10dp"
+        android:layout_below="@+id/idEditer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:password="true"
+        android:hint="请输入密码..." />
 </RelativeLayout>
