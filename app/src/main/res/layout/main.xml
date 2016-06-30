@@ -60,7 +60,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="聚优莆田 www.ptjuyou.com"
         android:textColor="@color/white"
-        android:id="@+id/textView"
+        android:id="@+id/copyright"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
