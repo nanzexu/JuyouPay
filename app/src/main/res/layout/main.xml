@@ -33,4 +33,21 @@
         android:layout_marginTop="30dp"
         android:password="true"
         android:hint="请输入密码..." />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始登陆"
+        android:id="@+id/loginBtn"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/pwdEditer"
+        android:layout_toStartOf="@+id/getpwdBtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="忘记密码"
+        android:id="@+id/getpwdBtn"
+        android:layout_alignTop="@+id/loginBtn"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
