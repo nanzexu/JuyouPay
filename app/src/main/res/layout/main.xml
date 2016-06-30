@@ -53,4 +53,14 @@
         android:id="@+id/getpwdBtn"
         android:layout_alignTop="@+id/loginBtn"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="聚优莆田 www.ptjuyou.com"
+        android:textColor="@color/white"
+        android:id="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
