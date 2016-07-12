@@ -1,4 +1,6 @@
-package com.juyou.juyoupay.bean;
+package com.juyou.juyoupay.Utils;
+
+import com.juyou.juyoupay.bean.Token;
 
 import hprose.common.HproseCallback;
 import hprose.common.HproseCallback1;
@@ -8,6 +10,7 @@ import hprose.common.HproseCallback1;
  */
 public interface HttpRpcInterface {
     String hello(String name,HproseCallback1 callback1);
-    Token token(String userID,String Password,HproseCallback callback);
+    Token token(String userID, String Password, HproseCallback callback);
+    Token token(String userID, String Password);
 
 }

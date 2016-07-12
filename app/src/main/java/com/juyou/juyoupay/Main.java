@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.juyou.juyoupay.bean.HttpRpcInterface;
+import com.juyou.juyoupay.Utils.HttpRpc;
+import com.juyou.juyoupay.Utils.HttpRpcInterface;
+import com.juyou.juyoupay.Utils.RpcInter;
 import com.juyou.juyoupay.bean.Token;
 import com.juyou.juyoupay.bean.UserInfo;
 
@@ -27,6 +28,32 @@ public class Main extends AppCompatActivity {
         this.init();
     }
     private void init(){
+        Button btn= (Button) findViewById(R.id.getpwdBtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HttpRpc hr=new HttpRpc();
+                hr.getToken("nanze", "123", new RpcInter() {
+                    @Override
+                    public void success(int a) {
+
+                    }
+
+                    @Override
+                    public void fail(Exception error) {
+
+                    }
+                });
+               /* runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        Token token=hr.getToken("nanze","123");
+                    }
+                });*/
+
+            }
+        });
         Button logBtn = (Button) findViewById(R.id.loginBtn);
         //final TextView copyright= (TextView) findViewById(R.id.copyright);
 
