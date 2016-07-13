@@ -10,7 +10,9 @@ import hprose.common.HproseCallback1;
  */
 public interface HttpRpcInterface {
     String hello(String name,HproseCallback1 callback1);
+    String hello(String name);
     Token token(String userID, String Password, HproseCallback callback);
     Token token(String userID, String Password);
+
 
 }

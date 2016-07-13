@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import com.juyou.juyoupay.Utils.HttpRpc;
 import com.juyou.juyoupay.Utils.HttpRpcInterface;
-import com.juyou.juyoupay.Utils.RpcInter;
 import com.juyou.juyoupay.bean.Token;
 import com.juyou.juyoupay.bean.UserInfo;
 
@@ -20,7 +19,7 @@ import hprose.common.HproseCallback;
 
 public class Main extends AppCompatActivity {
 
-    private String urlRpcServer="http://www.ptjuyou.com/weisite/app/index.php?i=2&c=entry&do=rpc&m=juyou_sms";
+    private final String urlRpcServer="http://www.ptjuyou.com/weisite/app/index.php?i=2&c=entry&do=rpc&m=juyou_sms";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,25 +31,9 @@ public class Main extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HttpRpc hr=new HttpRpc();
-                hr.getToken("nanze", "123", new RpcInter() {
-                    @Override
-                    public void success(int a) {
 
-                    }
-
-                    @Override
-                    public void fail(Exception error) {
-
-                    }
-                });
-               /* runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        Token token=hr.getToken("nanze","123");
-                    }
-                });*/
+               HttpRpc httpRpc=new HttpRpc(urlRpcServer,Main.this);
+                httpRpc.hello("nanze");
 
             }
         });
