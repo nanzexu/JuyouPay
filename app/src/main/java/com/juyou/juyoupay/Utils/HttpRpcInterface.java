@@ -1,6 +1,7 @@
 package com.juyou.juyoupay.Utils;
 
 import com.juyou.juyoupay.bean.Token;
+import com.juyou.juyoupay.bean.UserInfo;
 
 import hprose.common.HproseCallback;
 import hprose.common.HproseCallback1;
@@ -13,6 +14,7 @@ public interface HttpRpcInterface {
     String hello(String name,String access_token);
     Token token(String userID, String Password, HproseCallback callback);
     Token token(String userID, String Password);
+    UserInfo getUserInfo(String userID, String Password,String token);
 
 
 }

@@ -13,13 +13,10 @@ import java.io.Serializable;
  */
 public class Token implements Serializable {
     public String  access_token ;
-    public String  userid ;
     public int expires;
-    public String realname;
-    public String openid;
-    public String nickname;
-    public int createtime;
+    public int lastlogintime;
     public int code;
+    public String message;
 
 
 }

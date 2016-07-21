@@ -11,5 +11,6 @@ public class UserInfo {
     public String NickName;
     public String Access_Token;
     public String Expires;
-    public String CreateTime;
+    public int CreateTime;
+    public int lastlogintime;
 }

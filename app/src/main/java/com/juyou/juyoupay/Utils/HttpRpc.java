@@ -37,6 +37,9 @@ public class HttpRpc {
         this.hri=(HttpRpcInterface)client.useService(HttpRpcInterface.class);
 
     }
+    public void getUserinfo(String userId,String passWord,String token){
+
+    }
 
     public void hello(String name){
         new HelloAsyncTask().execute(name);
@@ -59,9 +62,9 @@ public class HttpRpc {
             Token token=hri.token("zy","123456");
             Log.i("juyou","=========================");
             Log.i("juyou",token.access_token);
-            Log.i("juyou",token.openid);
             Log.i("juyou", String.valueOf(token.expires));
-            Log.i("juyou", String.valueOf(token.nickname));
+            Log.i("juyou", String.valueOf(token.lastlogintime));
+            Log.i("juyou", String.valueOf(token.code));
             SharedPreferencesUtils.setParam(context,"token",token);
            /* String h=hri.hello(strings[0]);
             Log.i("juyou", h);*/
