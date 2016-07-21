@@ -6,4 +6,10 @@ package com.juyou.juyoupay.bean;
 public class UserInfo {
     public String userID;
     public String PassWord;
+    public String RealName;
+    public String OpenID;
+    public String NickName;
+    public String Access_Token;
+    public String Expires;
+    public String CreateTime;
 }

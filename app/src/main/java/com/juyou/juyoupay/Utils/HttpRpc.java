@@ -19,10 +19,13 @@ public class HttpRpc {
     private HproseHttpClient client ;
     private final  HttpRpcInterface hri;
     private final ProgressDialog progressDialog;
-    private Context context;
+    private final Context context;
+    private Token token;
     public HttpRpc(String url,Context con){
         this.urlRpcServer=url;
         this.context=con;
+
+        this.token=(Token)SharedPreferencesUtils.getParam(this.context,"token","");
         this.progressDialog = new ProgressDialog(this.context);
         this.progressDialog.setTitle("提示信息");
         this.progressDialog.setMessage("正在处理中，请稍后......");
@@ -34,6 +37,7 @@ public class HttpRpc {
         this.hri=(HttpRpcInterface)client.useService(HttpRpcInterface.class);
 
     }
+
     public void hello(String name){
         new HelloAsyncTask().execute(name);
     }
@@ -52,13 +56,16 @@ public class HttpRpc {
 
         @Override
         protected String doInBackground(String... strings) {
-            Token token=hri.token("nanze","123456");
+            Token token=hri.token("zy","123456");
             Log.i("juyou","=========================");
             Log.i("juyou",token.access_token);
-            Log.i("juyou", String.valueOf(token.expires_in));
-            String h=hri.hello(strings[0]);
-            Log.i("juyou", h);
-            return token.access_token;
+            Log.i("juyou",token.openid);
+            Log.i("juyou", String.valueOf(token.expires));
+            Log.i("juyou", String.valueOf(token.nickname));
+            SharedPreferencesUtils.setParam(context,"token",token);
+           /* String h=hri.hello(strings[0]);
+            Log.i("juyou", h);*/
+            return "ffff";
         }
     }
 }
