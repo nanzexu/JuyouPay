@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.juyou.juyoupay.bean.Token;
+import com.juyou.juyoupay.bean.UserInfo;
 
 import hprose.client.HproseHttpClient;
 import hprose.common.HproseCallback;
@@ -37,10 +38,40 @@ public class HttpRpc {
         this.hri=(HttpRpcInterface)client.useService(HttpRpcInterface.class);
 
     }
+    private static class getUserInfoParms{
+        String userId;
+        String passWord;
+        String token;
+        public getUserInfoParms(String userId,String passWord,String token){
+            this.userId=userId;
+            this.passWord=passWord;
+            this.token=token;
+        }
+    }
     public void getUserinfo(String userId,String passWord,String token){
+        Log.i("juyou_pay",token);
+        getUserInfoParms guip=new getUserInfoParms(userId,passWord,token);
+        new GetUserInfoAsyncTask().execute(guip);
 
     }
+    public class GetUserInfoAsyncTask extends AsyncTask<getUserInfoParms,Integer,UserInfo>{
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
 
+        @Override
+        protected void onPostExecute(UserInfo userInfo) {
+            super.onPostExecute(userInfo);
+        }
+
+        @Override
+        protected UserInfo doInBackground(getUserInfoParms... getUserInfoParmses) {
+            UserInfo userInfo=hri.getUserInfo(getUserInfoParmses[0].userId,getUserInfoParmses[0].passWord,getUserInfoParmses[0].token);
+            SharedPreferencesUtils.setParam(context,"userinfo",userInfo);
+            return userInfo;
+        }
+    }
     public void hello(String name){
         new HelloAsyncTask().execute(name);
     }

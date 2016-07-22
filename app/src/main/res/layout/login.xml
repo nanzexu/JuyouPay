@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.juyou.juyoupay.Main">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idEditer"
+        android:background="@drawable/bg_edittext"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:layout_marginTop="150dp"
+        android:singleLine="true"
+        android:hint="请输入账号..." />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pwdEditer"
+        android:background="@drawable/bg_edittext"
+        android:padding="10dp"
+        android:layout_below="@+id/idEditer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:password="true"
+        android:hint="请输入密码..." />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始登陆"
+        android:background="@drawable/btn_success"
+        android:id="@+id/loginBtn"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/pwdEditer"
+        android:layout_toStartOf="@+id/getpwdBtn"
+        android:layout_marginRight="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="忘记密码"
+        android:background="@drawable/btn_warning"
+        android:id="@+id/getpwdBtn"
+        android:layout_alignTop="@+id/loginBtn"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="聚优莆田 www.ptjuyou.com"
+        android:textColor="@color/white"
+        android:id="@+id/copyright"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
